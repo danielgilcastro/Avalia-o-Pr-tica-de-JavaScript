@@ -212,6 +212,17 @@ function contadorRegressivo() {
         }
     }
 
+    let i2 = num;
+     function atualizarContador() {
+          if (i2 >= 0) {
+                document.getElementById('contador-result-segundos').innerText = i2 + (i2 > 0 ? '... ' : '');
+                i2--;
+                setTimeout(atualizarContador, 1000);
+          } else {
+                document.getElementById('contador-result-segundos').innerText = 'Contagem finalizada!';
+          }
+     }
+     atualizarContador();
 
 
     document.getElementById('contador-result').innerText = resultado;
