@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script defer src="./index.js"></script>
+</head>
+
+<body>
+
+
+
+    <div class="container">
+        <h1>Avaliação Prática de JavaScript</h1>
+
+
+        <div class="exercise-list">
+            <div class="exercise-item">
+                Questão 1 – Calculadora Avançada .
+            </div>
+            <div class="calc-container">
+                <input type="number" class="input" id="num1" placeholder="Número 1">
+                <select class="select" id="operation">
+                    <option value="soma">Soma (+)</option>
+                    <option value="subtracao">Subtração (−)</option>
+                    <option value="multiplicacao">Multiplicação (×)</option>
+                    <option value="divisao">Divisão (÷)</option>
+                    <option value="modulo">Módulo (%)</option>
+                    <option value="potencia">Potência (^)</option>
+                </select>
+                <input type="number" class="input" id="num2" placeholder="Número 2">
+                <button id="btn" class="btn" onclick="calculadoraAvancada()">Calcular</button>
+                <div id="calc-result" class="result"></div>
+            </div>
+        </div>
+
+
+
+        <div class="exercise-list">
+            <div class="exercise-item">
+                Questão 2 – Classificação Etária
+            </div>
+            <div class="age-classification-container">
+                <input type="number" class="input" id="idade" placeholder="Digite sua idade">
+                <button id="btn-idade" class="btn" onclick="classificarIdade()">Classificar</button>
+                <div id="idade-result" class="result"></div>
+            </div>
+        </div>
+
+
+        <div class="exercise-list">
+            <div class="exercise-item">
+                Questão 3 – Tabuada com Intervalo
+            </div>
+            <div class="tabuada-container">
+                <input type="number" class="input" id="tabuada-base" placeholder="Número base">
+                <input type="number" class="input" id="tabuada-limite" placeholder="Limite final">
+                <button id="btn-tabuada" class="btn" onclick="tabuadaPersonalizada()">Mostrar Tabuada</button>
+                <div class="tamanho-limite-tabuada">
+                    <div id="tabuada-result" class="result"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="exercise-list">
+            <div class="exercise-item">
+                Questão 4 – Soma de Pares com while
+            </div>
+            <div class="soma-pares-container">
+                <input type="number" class="input" id="limite-pares" placeholder="Número limite">
+                <button id="btn-pares" class="btn" onclick="somaParesWhile()">Somar Pares</button>
+                <div id="pares-result" class="result"></div>
+            </div>
+        </div>
+
+
+        <div class="exercise-list">
+            <div class="exercise-item">
+                Questão 5 – Validação de Senha com Tentativas
+            </div>
+            <div class="senha-container">
+                <input type="password" class="input" id="password">
+                <button id="btn-senha" class="btn" onclick="validaSenha()">Validar Senha</button>
+                <div id="senha-result" class="result"></div>
+            </div>
+        </div>
+
+        <div class="exercise-list">
+            <div class="exercise-item">
+                Questão 6 – Fatorial com Validação
+            </div>
+            <div class="fatorial-container">
+                <input type="number" class="input" id="fatorial-num" placeholder="Digite um número inteiro positivo">
+                <button id="btn-fatorial" class="btn" onclick="calcularFatorial()">Calcular Fatorial</button>
+                <div id="fatorial-formula" class="result"></div>
+                <div id="fatorial-result" class="result"></div>
+            </div>
+        </div>
+
+
+        <div class="exercise-list">
+            <div class="exercise-item">
+                Questão 7 – Verificação de Número Primo
+            </div>
+            <div class="primo-container">
+                <input type="number" class="input" id="primo-num" placeholder="Digite um número inteiro">
+                <button id="btn-primo" class="btn" onclick="verificarPrimo()">Verificar Primo</button>
+                <div id="primo-result" class="result"></div>
+            </div>
+        </div>
+
+
+</body>
+
+</html>
