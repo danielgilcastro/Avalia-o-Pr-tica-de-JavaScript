@@ -81,25 +81,30 @@ function somaParesWhile() {
     document.getElementById('pares-result').innerText = `Soma dos pares: ${soma}`;
 }
 
-
+let tentativasRestantes = 3;
 
 function validaSenha() {
     const senhaCorreta = "123";
-    let tentativas = 0;
-    let acesso = false;
-
     const senha = document.getElementById('password').value;
-    if (senha === senhaCorreta) {
-        acesso = true;
-    }
-    tentativas++;
 
-    if (acesso) {
-        document.getElementById('senha-result').innerText = "Acesso permitido";
-    } else {
-        document.getElementById('senha-result').innerText = "Acesso bloqueado";
+    if (tentativasRestantes > 0) {
+        if (senha === senhaCorreta) {
+            document.getElementById('senha-result').innerText = "Acesso permitido";
+            document.getElementById('btn-senha').disabled = true;
+            document.getElementById('password').disabled = true;
+        } else {
+            tentativasRestantes--;
+            document.getElementById('senha-result').innerText = "Senha incorreta";
+            document.getElementById('tentativas').innerText = tentativasRestantes;
+            if (tentativasRestantes === 0) {
+                document.getElementById('senha-result').innerText = "Acesso bloqueado";
+                document.getElementById('btn-senha').disabled = true;
+                document.getElementById('password').disabled = true;
+            }
+        }
     }
 }
+
 
 function calcularFatorial() {
     const num = Number(document.getElementById('fatorial-num').value);
@@ -144,4 +149,95 @@ function verificarPrimo() {
     }
 
     document.getElementById('primo-result').innerText = mensagem;
+}
+
+
+
+
+
+let numerosMedia = [];
+
+function mediaAritmetica() {
+    const input = document.getElementById('media-input').value.trim();
+    let numerosDiv = document.getElementById('media-numeros');
+    let resultadoDiv = document.getElementById('media-resultado');
+
+    if (input.toLowerCase() === "fim") {
+        if (numerosMedia.length === 0) {
+            resultadoDiv.innerText = "Nenhum número inserido.";
+            return;
+        }
+        let soma = 0;
+        let i = 0;
+        while (i < numerosMedia.length) {
+            soma += numerosMedia[i];
+            i++;
+        }
+        let media = soma / numerosMedia.length;
+        resultadoDiv.innerText = `Média: ${media}`;
+        numerosMedia = [];
+        numerosDiv.innerText = "";
+    } else {
+        let numero = Number(input);
+        if (!isNaN(numero)) {
+            numerosMedia.push(numero);
+            numerosDiv.innerText = `Números: ${numerosMedia.join(", ")}`;
+            resultadoDiv.innerText = "";
+        } else {
+            resultadoDiv.innerText = 'Por favor, digite um número válido ou "fim".';
+        }
+    }
+    document.getElementById('media-input').value = "";
+    document.getElementById('media-input').focus();
+}
+function finalizarMediaAritmetica(){
+    document.getElementById('media-input').value = "fim"; 
+    mediaAritmetica()
+}
+
+
+
+
+function contadorRegressivo() {
+    const num = Number(document.getElementById('contador-num').value);
+    let resultado = '';
+
+    if (!Number.isInteger(num) || num <= 0) {
+        resultado = 'Por favor, insira um número inteiro maior que zero.';
+    } else {
+        let i = num;
+        while (i >= 0) {
+            resultado += i + (i > 0 ? '... ' : '');
+            i--;
+        }
+    }
+
+
+
+    document.getElementById('contador-result').innerText = resultado;
+}
+
+
+
+function verificarMultiplosCriterios() {
+    const inicio = Number(document.getElementById('criterios-inicio').value);
+    const fim = Number(document.getElementById('criterios-fim').value);
+    let encontrados = [];
+
+    if (isNaN(inicio) || isNaN(fim)) {
+        document.getElementById('criterios-result').innerText = 'Por favor, insira números válidos.';
+        return;
+    }
+
+    for (let i = inicio; i <= fim; i++) {
+        if (i % 2 === 0 && i % 3 === 0) {
+            encontrados.push(i);
+        }
+    }
+
+    if (encontrados.length > 0) {
+        document.getElementById('criterios-result').innerText = `Números pares e múltiplos de 3: ${encontrados.join(', ')}`;
+    } else {
+        document.getElementById('criterios-result').innerText = 'Nenhum número atende aos critérios.';
+    }
 }

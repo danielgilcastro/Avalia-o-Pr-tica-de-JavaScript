@@ -83,8 +83,9 @@
                 Questão 5 – Validação de Senha com Tentativas
             </div>
             <div class="senha-container">
-                <input type="password" class="input" id="password">
+                <input type="password" class="input" id="password" placeholder="Digite a senha">
                 <button id="btn-senha" class="btn" onclick="validaSenha()">Validar Senha</button>
+                <div id="tentativas-restantes" class="result">Tentativas restantes: <span id="tentativas">3</span></div>
                 <div id="senha-result" class="result"></div>
             </div>
         </div>
@@ -112,6 +113,54 @@
                 <div id="primo-result" class="result"></div>
             </div>
         </div>
+
+
+        <div class="exercise-list">
+            <div class="exercise-item">
+                Questão 8 – Média com Entradas Ilimitadas
+            </div>
+            <p class="alert">
+                Para calcular a média, digite números e pressione "Adicionar". Quando terminar, digite
+                <strong>fim</strong> ou pressione o botão para somar todos os inseridos.
+            </p>
+            <input type="text" class="input" id="media-input" placeholder='Digite um número ou "fim"'>
+            <button id="btn-media" class="btn" onclick="mediaAritmetica()">Adicionar</button>
+            <button id="btn-media" class="btn" onclick="finalizarMediaAritmetica()">Somar</button>
+            <div id="media-numeros" class="result"></div>
+            <div id="media-resultado" class="result"></div>
+        </div>
+
+
+        <div class="exercise-list">
+            <div class="exercise-item">
+                Questão 9 – Contador Regressivo
+            </div>
+            <div class="contador-regressivo-container">
+                <input type="number" class="input" id="contador-num" placeholder="Digite um número maior que zero">
+                <button id="btn-contador" class="btn" onclick="contadorRegressivo()">Contar</button>
+                <div id="contador-result" class="result"></div>
+            </div>
+        </div>
+
+
+
+        <div class="exercise-list">
+            <div class="exercise-item">
+                Questão 10 – Verificação de múltiplos critérios com for e operadores lógicos
+            </div>
+            <div class="criterios-container">
+                <input type="number" class="input" id="criterios-inicio" placeholder="Número inicial">
+                <input type="number" class="input" id="criterios-fim" placeholder="Número final">
+                <button id="btn-criterios" class="btn" onclick="verificarMultiplosCriterios()">Verificar</button>
+                <div id="criterios-result" class="result"></div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
 
 
 </body>
